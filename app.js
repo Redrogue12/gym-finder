@@ -14,7 +14,33 @@ function getDataFromApi(location, callback) {
     $.getJSON(FOURSQUARE_URL, query, callback)
 }
 
-function getPhotoFromApi() {}
+function getPhotoFromApi(url, venueID, callback) {
+    FOURSQUARE_PHOTO_URL += venueID + '/photos/'
+    var query = {
+    client_id: 'OKKLGV0OHNRNEF1B04HEOHQJRGVHZWY4RLWNWZWMR1U2NV3C',
+    client_secret: '2RGFKZTMXUCLFZLUOQJNBZW0KXLNPSPSMUYWJJCK4JQZKMJB',
+    v: 20170401
+    }
+    $.getJSON(FOURSQUARE_PHOTO_URL, query, callback)
+}
+
+function displayPhoto(data) {
+
+
+    if (data.response.photos.items.length > 0) {
+        var prefix = data.response.photos.items[0].prefix
+        var suffix = data.response.photos.items[0].suffix
+        var imageLink = prefix + '200x200' + suffix
+        console.log(imageLink);
+        var imageElement = "<img src='" + imageLink + "'></img>"
+        return imageElement
+    } else {
+
+        return "<img src='images/noPhoto.png'></img>"
+    }
+
+
+}
 
 function displaySearchData(data) {
     var venueID = ''
@@ -24,18 +50,42 @@ function displaySearchData(data) {
         data.response.venues.forEach(function(item) {
             var name = "Name: " + data.response.venues[i].name
             var address =   "Adress: " + data.response.venues[i].location.formattedAddress
-            // venueID = data.response.venues[i].id
-            // FOURSQUARE_PHOTO_URL += venueID + '/photos'
-            // getPhotoFromApi()
-            resultsElement += `<div class='js-gymResults'>
-                                    <h2>${name}</h2>
-                                    <p>${address}</p>
-                                </div>`
-            console.log(name)
-            console.log(address)
+            venueID = data.response.venues[i].id
+            // var imageSrc = getPhotoFromApi(FOURSQUARE_PHOTO_URL, venueID, displayPhoto)
+            FOURSQUARE_PHOTO_URL += venueID + '/photos/'
+            var query = {
+            client_id: 'OKKLGV0OHNRNEF1B04HEOHQJRGVHZWY4RLWNWZWMR1U2NV3C',
+            client_secret: '2RGFKZTMXUCLFZLUOQJNBZW0KXLNPSPSMUYWJJCK4JQZKMJB',
+            v: 20170401
+            }
+            $.getJSON(FOURSQUARE_PHOTO_URL, query, function(data) {
+                if (data.response.photos.items.length > 0) {
+                    var prefix = data.response.photos.items[0].prefix
+                    var suffix = data.response.photos.items[0].suffix
+                    var imageLink = prefix + '200x200' + suffix
+                    console.log(imageLink);
+                    var imageElement = "<img src='" + imageLink + "'></img>"
+
+                } else {
+
+                    var imageElement = "<img src='images/noPhoto.png'></img>"
+                }
+                    $('.js-results').append(`<div class='js-gymResults'>
+                                            ${imageElement}
+                                            <h2>${name}</h2>
+                                            <p>${address}</p>
+                                        </div>`)
+
+            })
+
+
+
+
+            FOURSQUARE_PHOTO_URL = 'https://api.foursquare.com/v2/venues/'
+
             i++
         })
-        $('.js-results').html(resultsElement)
+
     }
 }
 
