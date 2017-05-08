@@ -38,10 +38,12 @@ input[type="text"] {
     border: none;
     height: 24px;
     font-size: 14px;
+    min-width: 200px;
 }
 
 input[type="text"]:focus {
     border: 2px solid #FF0000;
+
 }
 
 input[type="submit"] {
@@ -51,14 +53,14 @@ input[type="submit"] {
     border: none;
     color: white;
     height: 24px;
+    min-width: 200px;
 }
 
 .js-gymResults {
     height: 350px;
     border: 1px solid black;
     background-color:#00B3B3;
-
-    /*FF8C2C*/
+    border-radius: 3px;
     display: flex;
     flex-direction: column;
 
@@ -66,7 +68,7 @@ input[type="submit"] {
 
 .js-gymResults img {
     margin: 10px auto 0 auto;
-    width: 150px;
+    width: 156px;
+    min-width: 100px;
     height: 150px;
-    /*border-radius: 15%;*/
 }
