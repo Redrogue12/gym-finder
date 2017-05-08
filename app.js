@@ -68,12 +68,15 @@ function displaySearchData(data) {
 
                 } else {
 
-                    var imageElement = "<img src='images/noPhoto.png'></img>"
+                    var imageElement = "<img src='images/no-image.jpg'></img>"
                 }
-                    $('.js-results').append(`<div class='js-gymResults'>
-                                            ${imageElement}
-                                            <h2>${name}</h2>
-                                            <p>${address}</p>
+                    $('.js-results').append(
+                                        `<div class='js-gymResults col-4'>
+                                                ${imageElement}
+
+                                                <h2>${name}</h2>
+                                                <p>${address}</p>
+
                                         </div>`)
 
             })
@@ -92,6 +95,7 @@ function displaySearchData(data) {
 function watchSubmit() {
     $('.searchForm').submit(function(e) {
         e.preventDefault()
+        $('.js-results').html('')
         var query = $('input[name=enterLocation]').val()
         getDataFromApi(query, displaySearchData)
     })
