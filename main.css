@@ -1,0 +1,72 @@
+html, body {
+    background-color: white;
+    height: 100%;
+    margin: 0;
+    color: white;
+}
+
+header {
+    background-color: #222222;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border-bottom: 2px solid black;
+}
+
+header h1, header p {
+    margin: 0;
+}
+
+main {
+    background-image: url('images/weights.jpeg');
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+}
+
+.searchForm {
+    width: 33%;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+input[type="text"] {
+    border-top-left-radius: .2em;
+    border-top-right-radius: .2em;
+    border: none;
+    height: 24px;
+    font-size: 14px;
+}
+
+input[type="text"]:focus {
+    border: 2px solid #FF0000;
+}
+
+input[type="submit"] {
+    border-bottom-right-radius: .2em;
+    border-bottom-left-radius: .2em;
+    background-color: #FF0000;
+    border: none;
+    color: white;
+    height: 24px;
+}
+
+.js-gymResults {
+    height: 350px;
+    border: 1px solid black;
+    background-color:#00B3B3;
+
+    /*FF8C2C*/
+    display: flex;
+    flex-direction: column;
+
+}
+
+.js-gymResults img {
+    margin: 10px auto 0 auto;
+    width: 150px;
+    height: 150px;
+    /*border-radius: 15%;*/
+}
