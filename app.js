@@ -49,7 +49,7 @@ function displaySearchData(data) {
     if (data.response.venues) {
         data.response.venues.forEach(function(item) {
             var name = "Name: " + data.response.venues[i].name
-            var address =   "Adress: " + data.response.venues[i].location.formattedAddress
+            var address =   "Address: " + data.response.venues[i].location.formattedAddress
             venueID = data.response.venues[i].id
             // var imageSrc = getPhotoFromApi(FOURSQUARE_PHOTO_URL, venueID, displayPhoto)
             FOURSQUARE_PHOTO_URL += venueID + '/photos/'
@@ -73,7 +73,6 @@ function displaySearchData(data) {
                     $('.js-results').append(
                                         `<div class='js-gymResults col-4'>
                                                 ${imageElement}
-
                                                 <h2>${name}</h2>
                                                 <p>${address}</p>
 
