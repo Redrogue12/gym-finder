@@ -47,11 +47,12 @@ function displaySearchData(data) {
     var i = 0
     var resultsElement = ''
     if (data.response.venues) {
+        console.log(data.response.venues);
         data.response.venues.forEach(function(item) {
             var name = "Name: " + data.response.venues[i].name
             var address =   "Address: " + data.response.venues[i].location.formattedAddress
             venueID = data.response.venues[i].id
-            // var imageSrc = getPhotoFromApi(FOURSQUARE_PHOTO_URL, venueID, displayPhoto)
+
             FOURSQUARE_PHOTO_URL += venueID + '/photos/'
             var query = {
             client_id: 'OKKLGV0OHNRNEF1B04HEOHQJRGVHZWY4RLWNWZWMR1U2NV3C',
@@ -68,20 +69,16 @@ function displaySearchData(data) {
 
                 } else {
 
-                    var imageElement = "<img src='images/no-image.jpg'></img>"
+                    var imageElement = "<img src='images/weight.png'></img>"
                 }
                     $('.js-results').append(
-                                        `<div class='js-gymResults col-4'>
-                                                ${imageElement}
-                                                <h2>${name}</h2>
-                                                <p>${address}</p>
-
+                                        `<div class="js-gymResults col-4">
+                                            ${imageElement}
+                                            <h3>${name}</h3>
+                                            <p>${address}</p>
                                         </div>`)
 
             })
-
-
-
 
             FOURSQUARE_PHOTO_URL = 'https://api.foursquare.com/v2/venues/'
 
