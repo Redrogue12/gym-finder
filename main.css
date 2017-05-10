@@ -35,6 +35,7 @@ h1, p, h3 {
     width: 60px;
     height: 60px;
     border-radius: 50%;
+    align-self: center;
 }
 
 main {
@@ -43,11 +44,13 @@ main {
     background-size: cover;
     background-position: center;
     height: 100%;
+    border-right: 3px solid #1A2A43;
+    border-left: 3px solid #1A2A43;
 }
 
 .searchForm {
     width: 33%;
-    min-width: 250px;
+    min-width: 300px;
     padding-top: 20px;
     text-align: center;
 }
@@ -57,8 +60,8 @@ input[type="text"] {
     border: 2px solid #97D8B2;
     height: 32px;
     font-size: 14px;
-    width: 300px;
-    min-width: 250px;
+    width: 250px;
+    min-width: 200px;
     padding: 15px;
 }
 
@@ -69,12 +72,17 @@ input[type="text"]:focus {
 
 input[type="submit"] {
     border-radius: 3px;
+    border-bottom: 2px solid #BA0000;
+    border-right: 2px solid #BA0000;
+    border-top: none;
+    border-left: none;
+    padding-top: 5px;
+    margin-top: 10px;
     background-color: #FF0000;
-    border: none;
     color: white;
     height: 24px;
     width: 80px;
-    margin-top: 10px;
+    font-weight: bold;
 }
 
 .js-gymResults {
@@ -84,6 +92,8 @@ input[type="submit"] {
     background-color: #53599A;
     height: 300px;
     border: 4px solid transparent;
+    border-right: 4px solid #3D4171;
+    border-bottom: 4px solid #3D4171;
     background-clip: padding-box;
     -moz-background-clip: padding;
     -webkit-background-clip: padding;
@@ -101,4 +111,9 @@ input[type="submit"] {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 20px;
+    border: 1px solid white;
+}
+
+.js-gymResults h3 {
+    margin-bottom: 10px;
 }
