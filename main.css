@@ -3,6 +3,7 @@ html, body {
     margin: 0;
     color: white;
     font-family: 'Special Elite';
+    background-color: #23395B;
 }
 
 header {
@@ -40,7 +41,7 @@ h1, p, h3 {
 
 main {
     /*background-image: url('images/weights.jpeg');*/
-    background-color: #23395B;
+    /*background-color: #23395B;*/
     background-size: cover;
     background-position: center;
     height: 100%;
