@@ -51,7 +51,7 @@ main {
 .searchForm {
     width: 50%;
     min-width: 300px;
-    padding-top: 20px;
+    padding: 20px 0 0 0;
     text-align: center;
 }
 
@@ -80,7 +80,7 @@ input[type="submit"] {
     background-color: #FF0000;
     color: white;
     line-height: 24px;
-    width: 25%;
+    width: 35%;
     font-weight: bold;
 }
 
