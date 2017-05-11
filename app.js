@@ -58,6 +58,13 @@ function displaySearchData(data) {
         })
 
     }
+
+    else if (data.response.venues == false) {
+
+    }{
+        $('.js-results').append(`<h3 style="text-align:center; margin-top: 40px">Sorry, there are no results for this location. Try another location.</h3>`)
+    }
+
 }
 
 function watchSubmit() {
