@@ -50,7 +50,7 @@ main {
 
 .searchForm {
     width: 50%;
-    min-width: 300px;
+    min-width: 280px;
     padding: 20px 0 0 0;
     text-align: center;
 }
@@ -60,13 +60,15 @@ input[type="text"] {
     border: 2px solid #97D8B2;
     line-height: 32px;
     font-size: 14px;
-    width: 100%;
-    /*padding: 15px;*/
+    width: 75%;
+    transition-property: width;
+    transition-duration: .8s;
+    transition-timing-function: linear;
 }
 
 input[type="text"]:focus {
     border: 2px solid #FF0000;
-
+    width: 100%;
 }
 
 input[type="submit"] {
