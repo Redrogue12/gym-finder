@@ -59,9 +59,7 @@ function displaySearchData(data) {
 
     }
 
-    else if (data.response.venues == false) {
-
-    }{
+    if (data.response.venues.length == 0) {
         $('.js-results').append(`<h3 style="text-align:center; margin-top: 40px">Sorry, there are no results for this location. Try another location.</h3>`)
     }
 
