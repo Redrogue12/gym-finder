@@ -19,12 +19,13 @@ function displaySearchData(data) {
     var i = 0
     var resultsElement = ''
     if (data.response.venues) {
-        console.log(data.response.venues);
+
         data.response.venues.forEach(function(item) {
             var name = "Name: " + data.response.venues[i].name
             var address =   "Address: " + data.response.venues[i].location.formattedAddress
             venueID = data.response.venues[i].id
 
+            // This is a separate query to get the picture from the gym
             FOURSQUARE_PHOTO_URL += venueID + '/photos/'
             var query = {
             client_id: 'OKKLGV0OHNRNEF1B04HEOHQJRGVHZWY4RLWNWZWMR1U2NV3C',
@@ -58,7 +59,7 @@ function displaySearchData(data) {
         })
 
     }
-
+    //Error message if there are no resutls
     if (data.response.venues.length == 0) {
         $('.js-results').append(`<h3 style="text-align:center; margin-top: 40px">Sorry, there are no results for this location. Try another location.</h3>`)
     }

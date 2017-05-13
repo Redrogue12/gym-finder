@@ -38,16 +38,6 @@ h3 {
     align-self: center;
 }
 
-main {
-    /*background-image: url('images/weights.jpeg');*/
-    background-color: #23395B;
-    background-size: cover;
-    background-position: center;
-    height: auto;
-    border-right: 3px solid #1A2A43;
-    border-left: 3px solid #1A2A43;
-}
-
 .searchForm {
     width: 100%;
     min-width: 280px;
