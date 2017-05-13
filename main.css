@@ -43,16 +43,17 @@ main {
     background-color: #23395B;
     background-size: cover;
     background-position: center;
-    height: 100%;
+    height: auto;
     border-right: 3px solid #1A2A43;
     border-left: 3px solid #1A2A43;
 }
 
 .searchForm {
-    width: 50%;
+    width: 100%;
     min-width: 280px;
-    padding: 20px 0 0 0;
+    padding: 20px 10%;
     text-align: center;
+    background-color: #23395B;
 }
 
 input[type="text"] {
@@ -60,7 +61,8 @@ input[type="text"] {
     border: 2px solid #97D8B2;
     line-height: 32px;
     font-size: 14px;
-    width: 75%;
+    width: 80%;
+    min-width: 250px;
     transition-property: width;
     transition-duration: .8s;
     transition-timing-function: linear;
@@ -79,10 +81,12 @@ input[type="submit"] {
     border-left: none;
     padding-top: 5px;
     margin-top: 20px;
+    margin-bottom: 20px;
     background-color: #FF0000;
     color: white;
     line-height: 24px;
-    width: 35%;
+    width: 20%;
+    min-width: 150px;
     font-weight: bold;
 }
 
